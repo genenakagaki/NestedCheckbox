@@ -8,6 +8,7 @@
 
     <title>Nested Checkbox</title>
 
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -15,42 +16,55 @@
 
     <div class="nc-container">
         <div class="nc-main">
+            <button class="nc-arrow">
+                <span></span>
+            </button>
             <input type="checkbox" id="main-ck1">
             <label for="main-ck1">Main Checkbox 1</label>
-
-            <div class="nc-sub-container">
-                <div class="nc-sub">
-                    <input type="checkbox" id="sub-ck1">
-                    <label for="sub-ck1">Sub Checkbox 1</label>
-                </div>
-                <div class="nc-sub">
-                    <input type="checkbox" id="sub-ck1">
-                    <label for="sub-ck1">Sub Checkbox 1</label>
-                </div>
-                <div class="nc-sub">
-                    <input type="checkbox" id="sub-ck2">
-                    <label for="sub-ck2">Sub Checkbox 2</label>
-                </div>
-                <div class="nc-sub">
-                    <input type="checkbox" id="sub-ck3">
-                    <label for="sub-ck3">Sub Checkbox 3</label>
-                </div>
-                <div class="nc-sub">
-                    <input type="checkbox" id="sub-ck4">
-                    <label for="sub-ck4">Sub Checkbox 4</label>
-                </div>
+        </div>
+        <div class="nc-sub-container">
+            <div class="nc-sub">
+                <input type="checkbox" id="sub-ck1">
+                <label for="sub-ck1">Sub Checkbox 1</label>
+            </div>
+            <div class="nc-sub">
+                <input type="checkbox" id="sub-ck1">
+                <label for="sub-ck1">Sub Checkbox 1</label>
+            </div>
+            <div class="nc-sub">
+                <input type="checkbox" id="sub-ck2">
+                <label for="sub-ck2">Sub Checkbox 2</label>
+            </div>
+            <div class="nc-sub">
+                <input type="checkbox" id="sub-ck3">
+                <label for="sub-ck3">Sub Checkbox 3</label>
+            </div>
+            <div class="nc-sub">
+                <input type="checkbox" id="sub-ck4">
+                <label for="sub-ck4">Sub Checkbox 4</label>
             </div>
         </div>
     </div>
 </body>
 
-<script src="./anime.min.js"></script>
 <script>
     function log(message) {
         var D = true;
         if (D)
             console.log(message);
     }
+
+    document.querySelector('.nc-arrow').addEventListener('click', function () {
+        if (this.classList.contains('open')) {
+            // Close if it is open
+            this.classList.remove('open');
+            this.parentElement.parentElement.querySelector('.nc-sub-container').style.height = 0;
+        } else {
+            // Open if it is closed
+            this.classList.add('open');
+            this.parentElement.parentElement.querySelector('.nc-sub-container').style.height = 'auto';
+        }
+    })
 </script>
 
 </html>

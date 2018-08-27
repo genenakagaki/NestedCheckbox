@@ -1,0 +1,33 @@
+.nc-arrow {
+    background: none;
+    border: none;
+    padding: 6px 3px 6px 9px;
+}
+.nc-arrow span {
+    border-style: solid;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-left-color: black;
+    border-width: 6px;
+    display: inline-block; 
+    -webkit-transition: transform 200ms; /* For Safari 3.1 to 6.0 */
+    transition: transform 200ms;
+}
+
+.nc-arrow.open {
+    padding: 6px 6px 6px;
+}
+
+.nc-arrow.open span {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari 3-8 */
+    transform: rotate(90deg);
+}
+
+.nc-sub-container {
+    padding-left: 40px;
+    overflow: hidden;
+    -webkit-transition: height 2s; /* For Safari 3.1 to 6.0 */
+    transition: height 2s;  
+}
