@@ -26,8 +26,8 @@
 }
 
 .nc-sub-container {
-    padding-left: 40px;
+    padding-left: 50px;
     overflow: hidden;
-    -webkit-transition: height 2s; /* For Safari 3.1 to 6.0 */
-    transition: height 2s;  
+    -webkit-transition: opacity 200ms; /* For Safari 3.1 to 6.0 */
+    transition: opacity 200ms;  
 }

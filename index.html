@@ -32,7 +32,7 @@
                 <label for="sub-ck1">Sub Checkbox 1</label>
             </div>
             <div class="nc-sub">
-                <input type="checkbox" id="sub-ck2">
+                    <input type="checkbox" id="sub-ck2">
                 <label for="sub-ck2">Sub Checkbox 2</label>
             </div>
             <div class="nc-sub">
@@ -54,17 +54,28 @@
             console.log(message);
     }
 
+    function NestedCheckbox() {
+        
+    }
+
     document.querySelector('.nc-arrow').addEventListener('click', function () {
         if (this.classList.contains('open')) {
             // Close if it is open
             this.classList.remove('open');
-            this.parentElement.parentElement.querySelector('.nc-sub-container').style.height = 0;
+            this.parentElement.parentElement.querySelector('.nc-sub-container').style.opacity = 0;
         } else {
             // Open if it is closed
             this.classList.add('open');
-            this.parentElement.parentElement.querySelector('.nc-sub-container').style.height = 'auto';
+            this.parentElement.parentElement.querySelector('.nc-sub-container').style.opacity = 1;
         }
-    })
+    });
+
+    document.querySelector('.nc-main > input[type=checkbox]').addEventListener('click', function() {
+        var subCheckboxes = this.parentElement.parentElement.querySelectorAll('.nc-sub');
+        for (var i = 0; i < subCheckboxes.length; i++) {
+            subCheckboxes[i].querySelector('input[type=checkbox]').checked = this.checked;
+        }
+    });
 </script>
 
 </html>
