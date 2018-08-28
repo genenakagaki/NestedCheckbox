@@ -1,4 +1,11 @@
+.nc-main {
+    position: relative;
+}
+
 .nc-arrow {
+    position: absolute;
+    top: -2px;
+    left: -24px;
     background: none;
     border: none;
     padding: 6px 3px 6px 9px;
@@ -15,19 +22,24 @@
     transition: transform 200ms;
 }
 
-.nc-arrow.open {
-    padding: 6px 6px 6px;
-}
-
 .nc-arrow.open span {
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Safari 3-8 */
     transform: rotate(90deg);
 }
 
-.nc-sub-container {
-    padding-left: 50px;
+.nc-top-container {
+    padding-left: 20px;
+}
+
+.nc-container {
     overflow: hidden;
-    -webkit-transition: opacity 200ms; /* For Safari 3.1 to 6.0 */
-    transition: opacity 200ms;  
+    padding-left: 20px;
+}
+
+.nc-sub-container {
+    padding-left: 20px;
+    overflow: hidden;
+    -webkit-transition: height 200ms; /* For Safari 3.1 to 6.0 */
+    transition: height 200ms;  
 }

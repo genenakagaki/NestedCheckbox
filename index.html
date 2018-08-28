@@ -14,68 +14,119 @@
 <body>
     <h1>Nested Checkbox</h1>
 
-    <div class="nc-container">
-        <div class="nc-main">
-            <button class="nc-arrow">
-                <span></span>
-            </button>
-            <input type="checkbox" id="main-ck1">
-            <label for="main-ck1">Main Checkbox 1</label>
-        </div>
-        <div class="nc-sub-container">
-            <div class="nc-sub">
-                <input type="checkbox" id="sub-ck1">
-                <label for="sub-ck1">Sub Checkbox 1</label>
+    <div class="example">
+
+        <div class="nc-top-container" data-depth="1">
+            <div class="nc-main">
+                <button type="button" class="nc-arrow open">
+                    <span></span>
+                </button>
+                <input type="checkbox" id="main-ck1">
+                <label for="main-ck1">Main Checkbox 1</label>
             </div>
-            <div class="nc-sub">
-                <input type="checkbox" id="sub-ck1">
-                <label for="sub-ck1">Sub Checkbox 1</label>
-            </div>
-            <div class="nc-sub">
+            <div class="nc-sub-container">
+                <div class="nc-sub">
+                    <input type="checkbox" id="sub-ck1">
+                    <label for="sub-ck1">Sub Checkbox 1</label>
+                </div>
+                <div class="nc-sub">
+                    <input type="checkbox" id="sub-ck1">
+                    <label for="sub-ck1">Sub Checkbox 1</label>
+                </div>
+                <div class="nc-sub">
                     <input type="checkbox" id="sub-ck2">
-                <label for="sub-ck2">Sub Checkbox 2</label>
-            </div>
-            <div class="nc-sub">
-                <input type="checkbox" id="sub-ck3">
-                <label for="sub-ck3">Sub Checkbox 3</label>
-            </div>
-            <div class="nc-sub">
-                <input type="checkbox" id="sub-ck4">
-                <label for="sub-ck4">Sub Checkbox 4</label>
+                    <label for="sub-ck2">Sub Checkbox 2</label>
+                </div>
+                <div class="nc-sub">
+                    <input type="checkbox" id="sub-ck3">
+                    <label for="sub-ck3">Sub Checkbox 3</label>
+                </div>
+                <div class="nc-sub">
+                    <input type="checkbox" id="sub-ck4">
+                    <label for="sub-ck4">Sub Checkbox 4</label>
+                </div>
             </div>
         </div>
+        <div class="nc-top-container" data-depth="1">
+            <div class="nc-main">
+                <button type="button" class="nc-arrow open">
+                    <span></span>
+                </button>
+                <input type="checkbox" id="main-ck1">
+                <label for="main-ck1">Main Checkbox 1</label>
+            </div>
+
+            <div class="nc-container">
+                <div class="nc-main">
+                    <button type="button" class="nc-arrow open">
+                        <span></span>
+                    </button>
+                    <input type="checkbox" id="main-ck1">
+                    <label for="main-ck1">Main Checkbox 1</label>
+                </div>
+                <div class="nc-sub-container">
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck1">
+                        <label for="sub-ck1">Sub Checkbox 1</label>
+                    </div>
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck1">
+                        <label for="sub-ck1">Sub Checkbox 1</label>
+                    </div>
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck2">
+                        <label for="sub-ck2">Sub Checkbox 2</label>
+                    </div>
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck3">
+                        <label for="sub-ck3">Sub Checkbox 3</label>
+                    </div>
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck4">
+                        <label for="sub-ck4">Sub Checkbox 4</label>
+                    </div>
+                </div>
+            </div>
+            <div class="nc-container">
+                <div class="nc-main">
+                    <button type="button" class="nc-arrow open">
+                        <span></span>
+                    </button>
+                    <input type="checkbox" id="main-ck1">
+                    <label for="main-ck1">Main Checkbox 1</label>
+                </div>
+                <div class="nc-sub-container">
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck1">
+                        <label for="sub-ck1">Sub Checkbox 1</label>
+                    </div>
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck1">
+                        <label for="sub-ck1">Sub Checkbox 1</label>
+                    </div>
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck2">
+                        <label for="sub-ck2">Sub Checkbox 2</label>
+                    </div>
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck3">
+                        <label for="sub-ck3">Sub Checkbox 3</label>
+                    </div>
+                    <div class="nc-sub">
+                        <input type="checkbox" id="sub-ck4">
+                        <label for="sub-ck4">Sub Checkbox 4</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 
+<script src="./nested-checkbox.js"></script>
+
 <script>
-    function log(message) {
-        var D = true;
-        if (D)
-            console.log(message);
-    }
-
-    function NestedCheckbox() {
-        
-    }
-
-    document.querySelector('.nc-arrow').addEventListener('click', function () {
-        if (this.classList.contains('open')) {
-            // Close if it is open
-            this.classList.remove('open');
-            this.parentElement.parentElement.querySelector('.nc-sub-container').style.opacity = 0;
-        } else {
-            // Open if it is closed
-            this.classList.add('open');
-            this.parentElement.parentElement.querySelector('.nc-sub-container').style.opacity = 1;
-        }
-    });
-
-    document.querySelector('.nc-main > input[type=checkbox]').addEventListener('click', function() {
-        var subCheckboxes = this.parentElement.parentElement.querySelectorAll('.nc-sub');
-        for (var i = 0; i < subCheckboxes.length; i++) {
-            subCheckboxes[i].querySelector('input[type=checkbox]').checked = this.checked;
-        }
-    });
+    new NestedCheckbox(document.querySelector('.example'));
 </script>
 
 </html>
