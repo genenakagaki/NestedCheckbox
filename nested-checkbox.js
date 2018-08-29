@@ -64,7 +64,7 @@ NcMainCkbx.prototype.changeChecked = function (isChecked) {
         }
     }
 
-    if (!isChecked && this.parentCkbx != undefined && this.parentCkbx.ckbx.checked) {
+    if (!isChecked && this.parentCkbx != undefined) {
         // Remove parent check
         this.parentCkbx.onChildChange(isChecked);
     }
